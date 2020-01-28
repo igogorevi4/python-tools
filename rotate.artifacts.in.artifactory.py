@@ -34,7 +34,7 @@ def rotate_artifacts(artifactory_url):
     for artifact_url in get_artifacts_urls(artifactory_url):
         artifactory_age = int(get_age_of_artifact(artifact_url))
         if artifactory_age > retention_period:
-            print("Deleting the atirfact: {0}; artifact age: {1} ".format(artifact_url,artifactory_age))
+            print("Deleting the artirfact: {0}; artifact age: {1} ".format(artifact_url,artifactory_age))
             delete_artifact(artifact_url)
 
 
