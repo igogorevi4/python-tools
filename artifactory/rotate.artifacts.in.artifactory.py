@@ -13,7 +13,7 @@ login_url = "https://artifactory.example.com/artifactory"
 api_url = '/api/repositories'
 url = login_url + api_url
 
-# put you username and access token here
+# put your username and access token here
 username = "USERNAME"
 api_key = "PutAccessTokenHere"
 
