@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 from artifactory import ArtifactoryPath
-# import artifactory
 import datetime
 import requests
 import json
