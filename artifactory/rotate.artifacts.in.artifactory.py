@@ -1,15 +1,38 @@
 #!/usr/bin/env python
 
 from artifactory import ArtifactoryPath
+# import artifactory
 import datetime
+import requests
+import json
 
 retention_period = 7
-# url = "http://repo.jfrog.org/artifactory/gradle-ivy-local"
+
 # put you artifactory path here
-url = "https://artifactory.example.com/repo-name"
-# put you access token here
-api_key = "ExampleApiToken"
+login_url = "https://artifactory.example.com/artifactory"
+
+api_url = '/api/repositories'
+url = login_url + api_url
+
+# put you username and access token here
+username = "USERNAME"
+api_key = "PutAccessTokenHere"
+
+payload = {'inUserName': username, 'inUserPass': api_key}
 today = datetime.datetime.now()
+
+
+def get_repos_list():
+    with requests.Session() as session:
+        p = session.post(login_url, data=payload)
+        j = session.get(url).text
+        json_content = json.loads(j)
+        repositories = []
+        for i in json_content:
+            for key, value in i.items():
+                if key == "url":
+                    repositories.append(value)
+        return repositories
 
 
 def get_latest_version_age(artifact_url):
@@ -41,4 +64,11 @@ def rotate_artifacts(artifactory_url):
             delete_artifact(artifact_url)
 
 
-rotate_artifacts(url)
+def main():
+    repos = get_repos_list()
+    for artifactory_url in repos:
+        rotate_artifacts(artifactory_url)
+
+
+main()
+
