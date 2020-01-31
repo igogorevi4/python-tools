@@ -6,7 +6,7 @@ Put you artifactory URL to variable `login_url`
 login_url = "https://artifactory.example.com/artifactory"
 ```
 
-then check if you API path is set to correct value
+then check if your API path is set to correct value
 
 ``` python
 api_url = '/api/repositories'
