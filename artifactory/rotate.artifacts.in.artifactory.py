@@ -7,7 +7,7 @@ import json
 
 retention_period = 7
 
-# put you artifactory path here
+# put your artifactory path here
 login_url = "https://artifactory.example.com/artifactory"
 
 api_url = '/api/repositories'
