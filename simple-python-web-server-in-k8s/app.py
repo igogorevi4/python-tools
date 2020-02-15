@@ -22,7 +22,6 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(b"Ok")
 
     def do_POST(self):
-
         response = BytesIO()
         if self.path == "/factorial":
             content_length = int(self.headers['Content-Length'])
