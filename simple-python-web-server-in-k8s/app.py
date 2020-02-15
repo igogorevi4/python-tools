@@ -36,17 +36,6 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                 result = "Non-negative number required"
         else:
             result = "Calculate factorial using this path /factorial"
-        # try:
-        #     number = int(body)
-        #     result = 1
-        #     if number >= 0:
-        #         i = 1 
-        #         for i in range (1, int(number)+1):
-        #             result = result * i
-        #     else:
-        #         result = "Non-negative number required"
-        # except:
-        #     result = "Non-negative number required"
             
         response.write(str(result).encode())
         self.wfile.write(response.getvalue())
