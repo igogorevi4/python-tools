@@ -3,7 +3,7 @@
 # Application run as daemon with next rotes:
 # “/” with page where it is written  "Success!"
 # “/ping” where is written "Ok"
-# “/factorial”. Funciton, wich calculated factorial of number. The number posted with "POST" to this rote and calculate and return it.
+# “/factorial”. Function which calculates factorial of number. The number posted with "POST" to this rote and calculate and return it.
 
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
