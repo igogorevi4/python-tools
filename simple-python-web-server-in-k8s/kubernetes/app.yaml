@@ -1,0 +1,44 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: simple-app
+# spec:
+#   selector:
+#     matchLabels:
+#       run: simple-app
+#   replicas: 3
+#   template:
+#     metadata:
+#       labels:
+#         run: simple-app
+#     spec:
+#       containers:
+#       - name: simple-app
+#         image: simple-python-app
+#         imagePullPolicy: Never
+#         # ports:
+#         # - containerPort: 9080
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: simple-app
+  labels:
+    app: simple-app
+spec:
+  containers:
+    - name: simple-app
+      image: simple-python-app
+      imagePullPolicy: Never
+      
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: simple-app-service
+spec:
+  selector:
+    app: simple-app
+  ports:
+    - port: 9080
