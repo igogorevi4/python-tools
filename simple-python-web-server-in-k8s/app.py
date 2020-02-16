@@ -14,12 +14,18 @@ import math
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        self.send_response(200)
-        self.end_headers()
         if self.path == "/":
             self.wfile.write(b"Success!")
+            self.send_response(200)
+            self.end_headers()
         elif self.path == "/ping":
             self.wfile.write(b"Ok")
+            self.send_response(200)
+            self.end_headers()
+        else:
+            self.send_response(404)
+            self.end_headers()
+
 
     def do_POST(self):
         response = BytesIO()
@@ -35,11 +41,13 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                 result = "Non-negative number required"
         else:
             result = "Calculate factorial using this path /factorial"
+            self.send_response(404)
+            self.end_headers()
             
         response.write(str(result).encode())
         self.wfile.write(response.getvalue())
 
 
 server_port = 9080
-httpd = HTTPServer(('localhost', server_port), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('', server_port), SimpleHTTPRequestHandler)
 httpd.serve_forever()
