@@ -6,7 +6,7 @@ git clone https://github.com/igogorevi4/python-tools.git
 
 Go to directory:
 ```shell
-cd cd python-tools/simple-python-web-server-in-k8s/
+cd python-tools/simple-python-web-server-in-k8s/
 ```
 
 And run starting shell-script:
