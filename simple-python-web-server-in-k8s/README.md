@@ -11,7 +11,7 @@ cd python-tools/simple-python-web-server-in-k8s/
 
 And run starting shell-script:
 ```shell
-run.service.sh
+./run.service.sh
 ```
 
 When cluster is installed and set, you can check your service using these commands:
