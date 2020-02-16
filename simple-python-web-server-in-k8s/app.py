@@ -26,7 +26,6 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_response(404)
             self.end_headers()
 
-
     def do_POST(self):
         response = BytesIO()
         if self.path == "/factorial":
