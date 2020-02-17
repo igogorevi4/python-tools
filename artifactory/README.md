@@ -1,4 +1,4 @@
-# Rotation outdated artifact from you Jfrog Artifactiry
+# Rotation outdated artifacts from you Jfrog Artifactiry
 
 Put you artifactory URL to variable `login_url`
 
