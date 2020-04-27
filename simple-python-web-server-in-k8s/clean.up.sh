@@ -11,5 +11,5 @@ $KUBECTL delete -f ingress.yaml && \
     $KUBECTL delete -f mandatory.yaml && \
     echo "========= Cluster has been deleted successfully."
 
-echo "========= Building an image of a simple python-web-server"
+echo "========= Removing a docker image of a simple python-web-server"
 $DOCKER rmi $(docker images | grep simple-python-app | awk '{print $3}')
